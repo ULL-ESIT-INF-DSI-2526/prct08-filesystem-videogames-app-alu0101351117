@@ -1,7 +1,9 @@
 import yargs from 'yargs';
 import { argumentos } from './argumentos.js';
 import { hideBin } from 'yargs/helpers';
-import { añadirVideojuego } from './añadir_archivos.js';
+import { añadirVideojuego } from './añadir.js';
+import { eliminarVideojuego } from './eliminar.js';
+import { listarVideojuegos } from './listar.js';
 
 export const argv = yargs(hideBin(process.argv))
   .command(
@@ -9,7 +11,6 @@ export const argv = yargs(hideBin(process.argv))
     'Añade un videojuego',
     (yargs) => yargs.options(argumentos),
     (argv) => {
-      // Filtrar solo los datos del videojuego, sin propiedades de yargs
       const datosLimpio = {
         id: argv.id,
         desc: argv.desc,
@@ -34,8 +35,8 @@ export const argv = yargs(hideBin(process.argv))
     }
   )
   .command(
-    'delete',
-    'Elmina un videojuego existente de la lista',
+    'remove',
+    'Elimina un videojuego existente de la lista',
     (yargs) =>
       yargs.options({
         user: {
@@ -50,7 +51,22 @@ export const argv = yargs(hideBin(process.argv))
         }
       }),
     (argv) => {
-      console.log('Eliminando videojuego:', argv);
+      eliminarVideojuego(argv.user, argv.id);
+    }
+  )
+  .command(
+    'list',
+    'Lista los videojuegos de un usuario',
+    (yargs) =>
+      yargs.options({
+        user: {
+          description: 'Usuario cuya colección se desea listar',
+          type: 'string',
+          demandOption: true
+        }
+      }),
+    (argv) => {
+      listarVideojuegos(argv.user);
     }
   )
   .help()

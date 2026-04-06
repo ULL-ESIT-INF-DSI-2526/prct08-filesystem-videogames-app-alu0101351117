@@ -2,6 +2,7 @@ import { existsSync } from "fs";
 import { VideojuegoSinUsuario } from "./argumentos.js";
 import fs from 'fs';
 import path from 'path';
+import chalk from 'chalk';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -29,11 +30,11 @@ export function añadirVideojuego(usuario: string, datos: VideojuegoSinUsuario){
     if(id_existente === undefined){
       videojuegos.push(datos);
       fs.writeFileSync(ruta, JSON.stringify(videojuegos, null, 2));
-      console.log(`Nuevo videojuego añadido a la colección del usuario ${usuario}`);
-    } else console.error(`El videojuego ya existe en la colección del usuario ${usuario}`);
+      console.log(chalk.green(`Nuevo videojuego añadido a la colección del usuario ${usuario}`));
+    } else console.error(chalk.red(`El videojuego ya existe en la colección del usuario ${usuario}`));
   }
   else {
     fs.writeFileSync(ruta, JSON.stringify([datos], null, 2));
-    console.log(`Nuevo videojuego añadido a la colección del usuario ${usuario}`);
+    console.log(chalk.green(`Nuevo videojuego añadido a la colección del usuario ${usuario}`));
   }
 }

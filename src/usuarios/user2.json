@@ -1,0 +1,13 @@
+[
+  {
+    "id": 2,
+    "desc": "Hollow Knight: Silksong",
+    "plataforma": "PC",
+    "genero": "Metroidvania",
+    "developer": "Team Cherry",
+    "año": 2025,
+    "multi": false,
+    "horas": 42,
+    "coste": 20
+  }
+]

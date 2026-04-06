@@ -65,17 +65,3 @@ export interface Videojuego {
 }
 
 export type VideojuegoSinUsuario = Omit<Videojuego, 'user'>;
-
-export interface ArgumentosVideojuego extends Videojuego {
-  _: string[];
-  $0: string;
-  [key: string]: unknown;
-}
-
-export interface ArgumentosDelete {
-  user: string;
-  id: number;
-  _: string[];
-  $0: string;
-  [key: string]: unknown;
-}

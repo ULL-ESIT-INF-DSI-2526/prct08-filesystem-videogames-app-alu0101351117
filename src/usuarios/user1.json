@@ -1,18 +1,5 @@
 [
   {
-    "user": "user1",
-    "id": 1,
-    "desc": "Hollow Knight",
-    "plataforma": "PC",
-    "genero": "Metroidvania",
-    "developer": "Team Cherry",
-    "año": 2017,
-    "multi": false,
-    "horas": 42,
-    "coste": 15
-  },
-  {
-    "user": "user1",
     "id": 2,
     "desc": "Hollow Knight: Silksong",
     "plataforma": "PC",
@@ -22,5 +9,16 @@
     "multi": false,
     "horas": 42,
     "coste": 20
+  },
+  {
+    "id": 3,
+    "desc": "Clair Obscure: Expedition 33",
+    "plataforma": "PC",
+    "genero": "Action",
+    "developer": "Sandfall Interactive",
+    "año": 2025,
+    "multi": false,
+    "horas": 80,
+    "coste": 100
   }
 ]

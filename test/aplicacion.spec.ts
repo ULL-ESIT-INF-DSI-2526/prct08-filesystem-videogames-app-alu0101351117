@@ -1,5 +1,5 @@
 import {describe, expect, test, beforeEach, afterEach} from "vitest"
-import { añadirVideojuego } from "../src/aplicacion/añadir_archivos.js"
+import { añadirVideojuego } from "../src/aplicacion/añadir.js"
 import fs from "fs"
 import path from 'path'
 import { fileURLToPath } from 'url'
